@@ -99,14 +99,14 @@ HTTP/1.1 200 OK
 curl -v -H "Content-type: application/json"  --data '{"title":"Qui est esse EDITED", "short_description": "EDITED Est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae...", "description": "EDITED est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla", "author":"Sun Tzu", "read":false }' http://151.80.147.203/articles/add
 ```
 
-####Success response
+#### Success response
 ```
 Content-type: application/json
 HTTP/1.1 200 OK
 
 {"success":"entity was created"}
 ```
-####Error response
+#### Error response
 ```
 Content-type: application/json
 HTTP/1.1 400 Bad Request
@@ -123,7 +123,7 @@ curl -v -H "Content-type: application/json" -X PUT --data '{"id": 1, "later":tru
 curl -v -H "Content-type: application/json" -X PUT --data '{"id": 1, "title":"Qui est esse EDITED", "short_description": "EDITED Est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae...", "description": "EDITED est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla", "author":"Sun Tzu", "read":false }' http://151.80.147.203/articles/edit
 ```
 
-####Success response
+#### Success response
 ```
 Content-type: application/json
 HTTP/1.1 200 OK
@@ -131,7 +131,7 @@ HTTP/1.1 200 OK
 {"success":"entity wa edited"}
 ```
 
-####Error response
+#### Error response
 ```
 Content-type: application/json
 HTTP/1.1 400 Bad Request
@@ -150,7 +150,7 @@ Content-type: application/json
 HTTP/1.1 200 OK
 {"success":"entity was deleted"}
 ```
-####Error response
+#### Error response
 ```
 Content-type: application/json
 HTTP/1.1 400 Bad Request
