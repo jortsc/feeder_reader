@@ -1,0 +1,44 @@
+<div>
+    <h3 class="spa_title">SPA - Article view</h3>
+    <br/>
+    <div ng-if="vm.readSuccess" class='alert alert-success'>
+        {{vm.readSuccessMessage}}
+    </div>
+    <ul class="list">
+        <li>
+            <span>Article title: </span>
+            <span class="art_content">{{vm.article.data.title}}</span>
+        </li>
+        <li>
+            <span>Author: </span>
+            <span class="art_content">{{vm.article.data.author}}</span>
+        </li>
+        <li>
+            <span>Short Description: </span>
+            <span class="art_content">{{vm.article.data.short_description}}</span>
+
+        </li>
+        <li>
+            <span>Description: </span>
+            <span class="art_content">{{vm.article.data.description}}</span>
+
+        </li>
+        <li>
+            <span>Creation date: </span>
+            <span class="art_content">{{vm.article.creation_date}}</span>
+
+        </li>
+    </ul>
+</div>
+
+<style>
+    .list {
+        list-style-type: none;
+        border: 1px solid #9e9d9d;
+        padding: 10px;
+        border-radius: 5px;
+    }
+    .art_content {
+        color: #9e9d9d;
+    }
+</style>

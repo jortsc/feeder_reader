@@ -1,0 +1,49 @@
+<div>
+    <h3 class="spa_title">SPA - Feed of Articles</h3>
+    <br/>
+    <div>
+        <div ng-if="vm.readSuccess" class='alert alert-success'>
+            {{vm.readSuccessMessage}}
+        </div>
+        <div ng-if="vm.saveForLaterSuccess" class='alert alert-success'>
+            {{vm.saveForLaterMessage}}
+        </div>
+    </div>
+    <br/>
+    <table class="table">
+        <tr>
+            <th>Article title</th>
+            <th>Author</th>
+            <th>Short Description</th>
+            <th class="spa_button">Mark Read</th>
+            <th class="spa_button">Save for later</th>
+        </tr>
+        <tr ng-repeat="article in vm.articles | orderBy: read">
+            <td ng-click="vm.pageArticle(article.id)">{{article.data.title}}</td>
+            <td ng-click="vm.pageArticle(article.id)">{{article.data.author}}</td>
+            <td ng-click="vm.pageArticle(article.id)">{{article.data.short_description}}</td>
+            <td class="spa_button">
+                <button ng-click="vm.markArticleAsRead(article.id, !article.data.read)" class="btn">
+                    {{article.data.read === true ? 'Mark Unread ': 'Mark Read'}}
+                </button>
+            </td>
+            <td class="spa_button">
+                <button ng-click="vm.saveForLater(article.id, !article.data.later)" class="btn" >
+                    {{article.data.later === false ? 'Save for later': 'Read It'}}
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>
+<style>
+    .articleRead{
+        background-color: #d5eef7;
+        font-style: italic;
+    }
+    td {
+        cursor: pointer;
+    }
+    .spa_button {
+        text-align: right;
+    }
+</style>
