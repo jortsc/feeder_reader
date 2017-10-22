@@ -2,7 +2,7 @@
 
 * CakePHP installed through Composer
 * Create Read Update Delete methodology over article entity as an API Rest, working with JSON to feed a frontend and without rendering any template more than the home.
-* At frontend I did it my best. I mean I don't knew ECMASCRITP 6, and from the scratch, given that I haven't all the time that I would like to dedicated it. In order to let it as I like.
+* At frontend I did it my best. I mean I didn't know ECMASCRITP 6, and from the scratch, given that I haven't all the time that I would like to dedicated it. In order to let it as I like.
 * Can check implementation here: [http://151.80.147.203](http://151.80.147.203)
 
 **This weekend has been complicated for me to get time to do it. I have the releasing of an application in which I am involved to 'live' environment, just this weekend... :)**  
