@@ -12,7 +12,7 @@
 
 
 ## Used Database - PostgreSQL working with JSON columns
-
+```
 // Install postgreSql
 apt-get install postgresql postgresql-contrib
 
@@ -37,7 +37,7 @@ psql -d rssfeeder
 
 CREATE USER app_user WITH PASSWORD 'gDQgnfZHYzuafOTRsjhCyRWAmFtQrTY6GMi0QqYVCjxprj1j';
 GRANT ALL PRIVILEGES ON DATABASE "rssfeeder" to app_user
-
+```
 
 ## Frontend Installation
 Located at /webroot/js
@@ -47,9 +47,12 @@ bower install (to install front-end packages)
 ## Available Request
 
 ### Get - Gets articles' feed
-
+```
 curl -v -H "Content-type: application/json" http://151.80.147.203/articles/feed | python -m json.tool
-#### Response
+```
+
+#### Response`
+```
 Content-type: application/json
 HTTP/1.1 200 OK
 [
@@ -66,11 +69,13 @@ HTTP/1.1 200 OK
         "id": 2
     },
     ............
-
+```
 ### Get - Gets given article
-
+```
 curl -v -H "Content-type: application/json" http://151.80.147.203/articles/article/1 | python -m json.tool
+```
 #### Response
+```
 Content-type: application/json
 HTTP/1.1 200 OK
 {
@@ -86,57 +91,69 @@ HTTP/1.1 200 OK
     },
     "id": 1
 }
-
+```
 
 ### POST - Creates a new article
-
+```
 curl -v -H "Content-type: application/json"  --data '{"title":"Qui est esse EDITED", "short_description": "EDITED Est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae...", "description": "EDITED est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla", "author":"Sun Tzu", "read":false }' http://151.80.147.203/articles/add
+```
 
 ####Success response
+```
 Content-type: application/json
 HTTP/1.1 200 OK
 
 {"success":"entity was created"}
-
+```
 ####Error response
+```
 Content-type: application/json
 HTTP/1.1 400 Bad Request
 
 {"error":"Cannot create entity review payload.\n"}
-
+```
 
 ### PUT - Updates given article content
-
+```
 curl -v -H "Content-type: application/json" -X PUT --data '{"id": 1, "read":true }' http://151.80.147.203/articles/edit
 
 curl -v -H "Content-type: application/json" -X PUT --data '{"id": 1, "later":true }' http://151.80.147.203/articles/edit
 
 curl -v -H "Content-type: application/json" -X PUT --data '{"id": 1, "title":"Qui est esse EDITED", "short_description": "EDITED Est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae...", "description": "EDITED est rerum tempore vitae sequi sint nihil reprehenderit dolor beatae ea dolores neque fugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis qui aperiam non debitis possimus qui neque nisi nulla", "author":"Sun Tzu", "read":false }' http://151.80.147.203/articles/edit
+```
 
 ####Success response
+```
 Content-type: application/json
 HTTP/1.1 200 OK
 
 {"success":"entity wa edited"}
-
+```
 
 ####Error response
+```
 Content-type: application/json
 HTTP/1.1 400 Bad Request
 
 {"error":"Cannot process this attribute autor.\n"}
+```
 
 ### DELETE - Deletes given article
+```
 curl -H "Content-type: application/json" -X DELETE http://151.80.147.203/articles/delete/10
+```
 
 #### Success response
+```
 Content-type: application/json
 HTTP/1.1 200 OK
 {"success":"entity was deleted"}
-
+```
 ####Error response
+```
 Content-type: application/json
 HTTP/1.1 400 Bad Request
 {"error":"Must provide article id existent in order to delete it."}
+```
 
 
