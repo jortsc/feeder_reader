@@ -12,7 +12,7 @@
 
 
 ## Used Database - PostgreSQL working with JSON columns
-```
+````
 // Install postgreSql
 apt-get install postgresql postgresql-contrib
 
@@ -37,13 +37,14 @@ psql -d rssfeeder
 
 CREATE USER app_user WITH PASSWORD 'gDQgnfZHYzuafOTRsjhCyRWAmFtQrTY6GMi0QqYVCjxprj1j';
 GRANT ALL PRIVILEGES ON DATABASE "rssfeeder" to app_user
-```
+````
 
 ## Frontend Installation
 Located at /webroot/js
+````
 npm install (to install node.js dependencies)
 bower install (to install front-end packages)
-
+````
 ## Available Request
 
 ### Get - Gets articles' feed
@@ -51,7 +52,7 @@ bower install (to install front-end packages)
 curl -v -H "Content-type: application/json" http://151.80.147.203/articles/feed | python -m json.tool
 ```
 
-#### Response`
+#### Response
 ```
 Content-type: application/json
 HTTP/1.1 200 OK
