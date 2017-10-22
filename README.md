@@ -1,4 +1,4 @@
-# CakePHP Application - basic RSS/Atom feed reader to Openhost
+# CakePHP Application - basic feed reader
 
 * CakePHP installed through Composer
 * Create Read Update Delete methodology over article entity as an API Rest, working with JSON to feed a frontend and without rendering any template more than the home.
